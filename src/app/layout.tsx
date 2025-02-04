@@ -4,6 +4,7 @@ import Navigation from './components/navigation'
 import Profile from './containers/profile';
 import Notice from './containers/notice';
 import Search from './containers/search';
+import { Suspense } from 'react'
 
 import './globals.css';
 
@@ -35,7 +36,9 @@ export default function RootLayout({
                     </Disclosure>
                 </header>
                 <main className="flex-1 min-h-[calc(100vh-165px)]">
-                    {children}
+                    <Suspense>
+                        {children}
+                    </Suspense>
                 </main>
                 <footer className="border-neutral-300 bg-neutral-50">
                     <div className="mx-auto max-w-7xl px-4 lg:px-8">
