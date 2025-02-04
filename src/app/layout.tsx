@@ -27,7 +27,9 @@ export default function RootLayout({
                             <div className="relative flex h-16 items-center justify-between">
                                 <Navigation />
                                 <div className="inset-y-0 right-0 flex items-center pr-2">
-                                    <Search />
+                                    <Suspense>
+                                        <Search />
+                                    </Suspense>
                                     <Notice />
                                     <Profile />
                                 </div>
